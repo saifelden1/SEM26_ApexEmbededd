@@ -1,0 +1,178 @@
+!SESSION 2025-10-04 19:47:23.395 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-04 19:49:04.912
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-04 19:49:04.915
+!MESSAGE Log4j2 initialized with config file D:\STM32\Shell_car_code\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-04 19:49:09.474
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-10-04 19:49:23.866
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39 RUNNING
+	 at java.base/java.io.RandomAccessFile.readBytes0(Native Method)
+	 at java.base/java.io.RandomAccessFile.readBytes(RandomAccessFile.java:400)
+	 at java.base/java.io.RandomAccessFile.read(RandomAccessFile.java:434)
+	 at java.base/java.io.RandomAccessFile.readFully(RandomAccessFile.java:498)
+	 at java.base/java.util.zip.ZipFile$Source.readFullyAt(ZipFile.java:1528)
+	 at java.base/java.util.zip.ZipFile$ZipFileInputStream.initDataOffset(ZipFile.java:930)
+	 at java.base/java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:946)
+	 at java.base/java.util.zip.ZipFile$ZipFileInflaterInputStream.fill(ZipFile.java:463)
+	 at java.base/java.util.zip.InflaterInputStream.read(InflaterInputStream.java:175)
+	 at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	 at org.eclipse.osgi.storage.bundlefile.CloseableBundleFile$BundleEntryInputStream.read(CloseableBundleFile.java:548)
+	 at org.eclipse.osgi.storage.StorageUtil.getBytes(StorageUtil.java:187)
+	 at org.eclipse.osgi.storage.bundlefile.BundleEntry.getBytes(BundleEntry.java:102)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findClassImpl(ClasspathManager.java:678)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:657)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:637)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:616)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:520)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	 at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	 at java.base/java.lang.ClassLoader.defineClass1(Native Method)
+	 at java.base/java.lang.ClassLoader.defineClass(ClassLoader.java:1027)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.defineClass(ModuleClassLoader.java:293)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.defineClass(ClasspathManager.java:774)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findClassImpl(ClasspathManager.java:691)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:657)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClassImpl(ClasspathManager.java:637)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:616)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:348)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:414)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:520)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:434)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:174)
+	 at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	 at com.teamdev.jxbrowser.browser.internal.rpc.DragAndDropStub.<clinit>(DragAndDropStub.java:31)
+	 at com.teamdev.jxbrowser.internal.rpc.ServiceConnectionImpl.<init>(ServiceConnectionImpl.java:47)
+	 at com.teamdev.jxbrowser.browser.internal.DragAndDrop.<init>(DragAndDrop.java:28)
+	 at com.teamdev.jxbrowser.browser.internal.BrowserImpl.lambda$new$7(BrowserImpl.java:182)
+	 at com.teamdev.jxbrowser.internal.Lazy.get(Lazy.java:46)
+	 at com.teamdev.jxbrowser.browser.internal.BrowserImpl.dragAndDrop(BrowserImpl.java:664)
+	 at com.teamdev.jxbrowser.view.swing.BrowserView$DragAndDropSupport.disable(BrowserView.java:295)
+	 at com.st.microxplorer.plugins.userauth.WebApp.<init>(WebApp.java:222)
+	 at com.st.microxplorer.plugins.userauth.WebApp.getInstance(WebApp.java:773)
+	 at com.st.microxplorer.plugins.userauth.UserAuth.getBrowserView(UserAuth.java:486)
+	 at com.st.microxplorer.plugins.userauth.UserAuth.checkInfile(UserAuth.java:251)
+	 at com.st.microxplorer.plugins.userauth.UserAuth.activatePlugin(UserAuth.java:169)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthAdapter.<init>(UserAuthAdapter.java:29)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthProvider.getUserAuthAdapter(UserAuthProvider.java:16)
+	 at com.st.stm32cube.common.ecosystemintegration.ui.core.MCUEcoSystemIntegrationUiHelper.getUserAuth(MCUEcoSystemIntegrationUiHelper.java:100)
+	 at com.st.stm32cube.ide.mcu.userauth.UserAuthStartup.earlyStartup(UserAuthStartup.java:32)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	 at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	 at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-10-04 19:49:33.873 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  D:\STM32\Shell_car_code\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\STM32\Shell_car_code\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-04 19:49:40.226
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-04 19:49:40.227
+!MESSAGE Log4j2 initialized with config file D:\STM32\Shell_car_code\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-04 19:49:43.795
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-10-04 19:49:52.935
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39 RUNNING
+	 at java.base/java.io.WinNTFileSystem.normalize(WinNTFileSystem.java:176)
+	 at java.base/java.io.WinNTFileSystem.normalize(WinNTFileSystem.java:108)
+	 at java.base/java.io.File.<init>(File.java:369)
+	 at org.eclipse.osgi.storage.bundlefile.DirBundleFile.getFile(DirBundleFile.java:59)
+	 at org.eclipse.osgi.storage.bundlefile.DirBundleFile.getEntry(DirBundleFile.java:144)
+	 at org.eclipse.osgi.storage.bundlefile.BundleFile.getResourceURL(BundleFile.java:147)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathEntry.findResource(ClasspathEntry.java:228)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:462)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalResourceImpl(ClasspathManager.java:448)
+	 at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalResource(ClasspathManager.java:412)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalResource(ModuleClassLoader.java:340)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findLocalResource(BundleLoader.java:952)
+	 at org.eclipse.osgi.internal.loader.BundleLoader.findResource(BundleLoader.java:723)
+	 at org.eclipse.osgi.internal.loader.ModuleClassLoader.getResource(ModuleClassLoader.java:212)
+	 at java.base/java.lang.ClassLoader.getResourceAsStream(ClassLoader.java:1762)
+	 at org.apache.xerces.parsers.SecuritySupport$6.run(Unknown Source)
+	 at java.base/java.security.AccessController.doPrivileged(AccessController.java:319)
+	 at org.apache.xerces.parsers.SecuritySupport.getResourceAsStream(Unknown Source)
+	 at org.apache.xerces.parsers.ObjectFactory.findJarServiceProvider(Unknown Source)
+	 at org.apache.xerces.parsers.ObjectFactory.createObject(Unknown Source)
+	 at org.apache.xerces.parsers.ObjectFactory.createObject(Unknown Source)
+	 at org.apache.xerces.parsers.DOMParser.<init>(Unknown Source)
+	 at org.apache.xerces.parsers.DOMParser.<init>(Unknown Source)
+	 at org.apache.xerces.jaxp.DocumentBuilderImpl.<init>(Unknown Source)
+	 at org.apache.xerces.jaxp.DocumentBuilderImpl.<init>(Unknown Source)
+	 at org.apache.xerces.jaxp.DocumentBuilderFactoryImpl.setFeature(Unknown Source)
+	 at com.st.microxplorer.plugins.updater.util.AbstractXmlFileManage.openXml(AbstractXmlFileManage.java:134)
+	 at com.st.microxplorer.plugins.updater.xml.PackageFile.readFile(PackageFile.java:73)
+	 at com.st.microxplorer.plugins.updater.xml.ComputerFile.checkDataBaseVersions(ComputerFile.java:1110)
+	 at com.st.microxplorer.plugins.updater.engine.MainUpdater.checkComputerVersions(MainUpdater.java:3652)
+	 at com.st.microxplorer.plugins.updater.engine.MainUpdater.checkUserFiles(MainUpdater.java:492)
+	 at com.st.microxplorer.plugins.updater.engine.MainUpdater.<init>(MainUpdater.java:281)
+	 at com.st.microxplorer.plugins.updater.Updater.initPhase2(Updater.java:1162)
+	 at com.st.microxplorer.plugins.updater.Updater.setUserPreferencesHandler(Updater.java:1216)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.<init>(CubeMxInstance.java:141)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.getInstance(CubeMxInstance.java:91)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthAdapter.<init>(UserAuthAdapter.java:25)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthProvider.getUserAuthAdapter(UserAuthProvider.java:16)
+	 at com.st.stm32cube.common.ecosystemintegration.ui.core.MCUEcoSystemIntegrationUiHelper.getUserAuth(MCUEcoSystemIntegrationUiHelper.java:100)
+	 at com.st.stm32cube.ide.mcu.userauth.UserAuthStartup.earlyStartup(UserAuthStartup.java:32)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	 at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	 at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-10-04 19:49:54.319 -----------------------------------------------
+eclipse.buildId=Version 1.18.1
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  D:\STM32\Shell_car_code\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 D:\STM32\Shell_car_code\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-10-04 19:50:04.502
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-10-04 19:50:04.503
+!MESSAGE Log4j2 initialized with config file D:\STM32\Shell_car_code\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-10-04 19:50:07.792
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-10-04 19:50:28.350
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39 RUNNING
+	 at java.base/java.lang.Thread.sleep0(Native Method)
+	 at java.base/java.lang.Thread.sleep(Thread.java:509)
+	 at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:371)
+	 at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:354)
+	 at com.st.microxplorer.plugins.pinoutandconfiguration.PinoutAndConfigurationView.getUI(PinoutAndConfigurationView.java:368)
+	 at com.st.microxplorer.plugin.PluginManage.PluginDiscovery(PluginManage.java:103)
+	 at com.st.microxplorer.maingui.MainPanel.initialization(MainPanel.java:329)
+	 at com.st.microxplorer.maingui.AppletMainFrameCubeIde.init(AppletMainFrameCubeIde.java:242)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.<init>(CubeMxInstance.java:117)
+	 at com.st.stm32cube.common.mx.core.CubeMxInstance.getInstance(CubeMxInstance.java:91)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthAdapter.<init>(UserAuthAdapter.java:25)
+	 at com.st.stm32cube.common.mx.userauth.UserAuthProvider.getUserAuthAdapter(UserAuthProvider.java:16)
+	 at com.st.stm32cube.common.ecosystemintegration.ui.core.MCUEcoSystemIntegrationUiHelper.getUserAuth(MCUEcoSystemIntegrationUiHelper.java:100)
+	 at com.st.stm32cube.ide.mcu.userauth.UserAuthStartup.earlyStartup(UserAuthStartup.java:32)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	 at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	 at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	 at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2733)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

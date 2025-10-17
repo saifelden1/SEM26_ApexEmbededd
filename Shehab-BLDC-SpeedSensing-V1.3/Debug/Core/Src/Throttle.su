@@ -1,0 +1,3 @@
+../Core/Src/Throttle.c:21:6:Throttle_Init	16	static
+../Core/Src/Throttle.c:29:10:Throttle_GetFilteredADC	24	static
+../Core/Src/Throttle.c:46:6:Throttle_Update	8	static

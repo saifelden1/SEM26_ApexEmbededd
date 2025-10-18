@@ -1,0 +1,2 @@
+../Drivers/HAL/Src/DMA_ADC.c:14:6:DMA_ADC_Init	1
+../Drivers/HAL/Src/DMA_ADC.c:21:6:ADC_Stop	1

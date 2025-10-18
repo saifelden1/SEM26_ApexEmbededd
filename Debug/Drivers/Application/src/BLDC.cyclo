@@ -1,0 +1,3 @@
+../Drivers/Application/src/BLDC.c:16:6:BLDC_Init	1
+../Drivers/Application/src/BLDC.c:29:6:BLDC_DecideStep	7
+../Drivers/Application/src/BLDC.c:58:6:BLDC_Comutate	8

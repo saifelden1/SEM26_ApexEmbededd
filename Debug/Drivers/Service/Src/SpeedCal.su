@@ -1,0 +1,4 @@
+../Drivers/Service/Src/SpeedCal.c:18:6:SpeedSensing_Init	8	static
+../Drivers/Service/Src/SpeedCal.c:27:6:SpeedSensing_HandleTransition	8	static
+../Drivers/Service/Src/SpeedCal.c:54:15:SpeedSensing_GetRPM	4	static
+../Drivers/Service/Src/SpeedCal.c:59:15:SpeedSensing_GetDistance	4	static

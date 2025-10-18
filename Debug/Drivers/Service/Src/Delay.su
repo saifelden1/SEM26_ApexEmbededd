@@ -1,0 +1,2 @@
+../Drivers/Service/Src/Delay.c:14:6:DelayUs_init	16	static
+../Drivers/Service/Src/Delay.c:20:6:DelayUs	16	static

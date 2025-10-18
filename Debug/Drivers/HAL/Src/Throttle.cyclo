@@ -1,0 +1,3 @@
+../Drivers/HAL/Src/Throttle.c:15:6:Throttle_Init	1
+../Drivers/HAL/Src/Throttle.c:20:10:Throttle_GetRaw	1
+../Drivers/HAL/Src/Throttle.c:28:10:Throttle_Map	1

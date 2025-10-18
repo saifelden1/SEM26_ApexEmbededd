@@ -1,0 +1,4 @@
+../Drivers/HAL/Src/Hall_Sensor.c:14:6:HallSensor_Init	1
+../Drivers/HAL/Src/Hall_Sensor.c:20:9:HallSensor_Read	1
+../Drivers/HAL/Src/Hall_Sensor.c:30:9:HallSensor_ReadWithFilter	3
+../Drivers/HAL/Src/Hall_Sensor.c:44:9:HallSensor_GetCombinedHallState	1

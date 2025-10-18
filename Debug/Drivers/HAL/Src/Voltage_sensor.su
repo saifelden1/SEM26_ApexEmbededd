@@ -1,0 +1,2 @@
+../Drivers/HAL/Src/Voltage_sensor.c:15:6:VoltageSensor_Init	4	static
+../Drivers/HAL/Src/Voltage_sensor.c:20:7:VoltageSensor_Read	16	static

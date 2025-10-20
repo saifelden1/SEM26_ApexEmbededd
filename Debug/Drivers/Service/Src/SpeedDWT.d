@@ -1,6 +1,6 @@
-Drivers/Service/Src/SpeedCal.o: ../Drivers/Service/Src/SpeedCal.c \
- C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedCal.h \
- ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+Drivers/Service/Src/SpeedDWT.o: ../Drivers/Service/Src/SpeedDWT.c \
+ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedDWT.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -25,10 +25,8 @@ Drivers/Service/Src/SpeedCal.o: ../Drivers/Service/Src/SpeedCal.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h
-C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedCal.h:
-../Core/Inc/main.h:
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedDWT.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -55,4 +53,3 @@ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedCal.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
-C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h:

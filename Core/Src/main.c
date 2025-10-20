@@ -146,7 +146,7 @@ int main(void)
 	  CurrentSensor_Read();
 	  BLDC_DecideStep();
 	  BLDC_Comutate();
-
+	  Speed_Process();
 
     /* USER CODE END WHILE */
 

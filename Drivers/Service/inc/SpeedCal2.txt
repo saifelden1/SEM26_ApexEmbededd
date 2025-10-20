@@ -5,8 +5,8 @@
  *      Author: 01226
  */
 
-#ifndef SERVICE_INC_SPEEDCAL_H_
-#define SERVICE_INC_SPEEDCAL_H_
+#ifndef SERVICE_INC_SPEEDCAL2_TXT_
+#define SERVICE_INC_SPEEDCAL2_TXT_
 
 
 
@@ -20,8 +20,10 @@ typedef struct {
     unsigned long stepCount;    // Counts steps to complete one revolution
     unsigned long lastUpdateTime; // Last update time for speed calculation
 } Speed;
-
+extern uint32_t before_test;
+extern uint32_t after_test;
 // Function prototypes
+void DWT_Status(void);           // Initialize the speed sensing module
 void SpeedSensing_Init(void);           // Initialize the speed sensing module
 void SpeedSensing_HandleTransition(void); // Handle step transition and calculate speed
 unsigned long SpeedSensing_GetRPM(void); // Get the current RPM from the speed struct
@@ -32,4 +34,4 @@ extern Speed motorSpeed;
 
 
 
-#endif /* SERVICE_INC_SPEEDCAL_H_ */
+#endif /* SERVICE_INC_SPEEDCAL2_TXT_ */

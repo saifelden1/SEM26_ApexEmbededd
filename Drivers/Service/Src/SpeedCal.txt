@@ -13,6 +13,10 @@ Speed motorSpeed = {0};  // Initialize the Speed struct with zero values
 unsigned long previousTime = 0; // Time of the last transition
 unsigned long currentTime  =  0; // Current time in milliseconds
 unsigned long timeDifference = 0; // Calculate the time difference
+uint32_t before_test=0;
+ uint32_t after_test;=0;
+
+
 
 // Initialize the speed sensing module
 void SpeedSensing_Init(void) {
@@ -21,6 +25,16 @@ void SpeedSensing_Init(void) {
     motorSpeed.revolutionTime = 0; // Initialize revolution time to 0
     motorSpeed.stepCount = 0;    // Initialize step count to 0
     motorSpeed.lastUpdateTime = HAL_GetTick(); // Initialize the last update time
+
+    	// Enable TRC (trace) so DWT works
+        CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+
+        // Reset cycle counter
+        DWT->CYCCNT = 0;
+
+        // Enable the cycle counter
+        DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
 }
 
 // This function is called to handle step transitions and calculate speed

@@ -14,6 +14,8 @@
 #include "hall_sensor.h"
 #include "throttle.h"
 #include "Delay.h"
+#include "SpeedDWT.h"
+
 
 // Declare timer handles as extern (defined elsewhere)
 extern TIM_HandleTypeDef htim1;  // Timer for phase U

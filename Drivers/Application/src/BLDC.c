@@ -23,6 +23,7 @@ void BLDC_Init(void) {
 
     HAL_TIM_PWM_Start(WH_TIMER, WH_CHANNEL);   // Start upper MOSFET for phase W
     HAL_TIM_PWM_Start(WL_TIMER, WL_CHANNEL);   // Start lower MOSFET for phase W
+    Speed_Init(); // init the speed sensing process
 }
 
 // Decide the commutation step based on Hall sensor combined state
@@ -51,7 +52,7 @@ void BLDC_DecideStep(void) {
                 step = 7;  // Default: no valid state
                 break;
     }
-//    laststep = step ;
+    Speed_CaptureDiff();
 }
 
 // Perform commutation based on the step and throttle value

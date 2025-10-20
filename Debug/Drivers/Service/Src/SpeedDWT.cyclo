@@ -1,0 +1,4 @@
+../Drivers/Service/Src/SpeedDWT.c:25:6:Speed_Init	1
+../Drivers/Service/Src/SpeedDWT.c:46:6:Speed_CaptureDiff	1
+../Drivers/Service/Src/SpeedDWT.c:59:6:Speed_Process	3
+../Drivers/Service/Src/SpeedDWT.c:83:7:Speed_GetRPM	1

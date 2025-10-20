@@ -6,15 +6,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Drivers/Service/Src/Delay.c \
-../Drivers/Service/Src/SpeedCal.c 
+../Drivers/Service/Src/SpeedDWT.c 
 
 OBJS += \
 ./Drivers/Service/Src/Delay.o \
-./Drivers/Service/Src/SpeedCal.o 
+./Drivers/Service/Src/SpeedDWT.o 
 
 C_DEPS += \
 ./Drivers/Service/Src/Delay.d \
-./Drivers/Service/Src/SpeedCal.d 
+./Drivers/Service/Src/SpeedDWT.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +24,7 @@ Drivers/Service/Src/%.o Drivers/Service/Src/%.su Drivers/Service/Src/%.cyclo: ..
 clean: clean-Drivers-2f-Service-2f-Src
 
 clean-Drivers-2f-Service-2f-Src:
-	-$(RM) ./Drivers/Service/Src/Delay.cyclo ./Drivers/Service/Src/Delay.d ./Drivers/Service/Src/Delay.o ./Drivers/Service/Src/Delay.su ./Drivers/Service/Src/SpeedCal.cyclo ./Drivers/Service/Src/SpeedCal.d ./Drivers/Service/Src/SpeedCal.o ./Drivers/Service/Src/SpeedCal.su
+	-$(RM) ./Drivers/Service/Src/Delay.cyclo ./Drivers/Service/Src/Delay.d ./Drivers/Service/Src/Delay.o ./Drivers/Service/Src/Delay.su ./Drivers/Service/Src/SpeedDWT.cyclo ./Drivers/Service/Src/SpeedDWT.d ./Drivers/Service/Src/SpeedDWT.o ./Drivers/Service/Src/SpeedDWT.su
 
 .PHONY: clean-Drivers-2f-Service-2f-Src
 

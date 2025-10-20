@@ -37,37 +37,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := ADC_test
+BUILD_ARTIFACT_NAME := Motor_Main_SEM26
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-ADC_test.elf \
+Motor_Main_SEM26.elf \
 
 MAP_FILES += \
-ADC_test.map \
+Motor_Main_SEM26.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-ADC_test.list \
+Motor_Main_SEM26.list \
 
 OBJCOPY_HEX += \
-ADC_test.hex \
+Motor_Main_SEM26.hex \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: ADC_test.elf secondary-outputs
+main-build: Motor_Main_SEM26.elf secondary-outputs
 
 # Tool invocations
-ADC_test.elf ADC_test.map: $(OBJS) $(USER_OBJS) C:\Users\01226\Desktop\apex25codes\ADC_test\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "ADC_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\apex25codes\ADC_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Motor_Main_SEM26.elf Motor_Main_SEM26.map: $(OBJS) $(USER_OBJS) C:\Users\01226\Desktop\apex25codes\ADC_test\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Motor_Main_SEM26.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\01226\Desktop\apex25codes\ADC_test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Motor_Main_SEM26.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -76,19 +76,19 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-ADC_test.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "ADC_test.list"
+Motor_Main_SEM26.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Motor_Main_SEM26.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-ADC_test.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "ADC_test.hex"
+Motor_Main_SEM26.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Motor_Main_SEM26.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) ADC_test.elf ADC_test.hex ADC_test.list ADC_test.map default.size.stdout
+	-$(RM) Motor_Main_SEM26.elf Motor_Main_SEM26.hex Motor_Main_SEM26.list Motor_Main_SEM26.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)

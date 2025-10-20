@@ -5,8 +5,8 @@
  *      Author: 01226
  */
 
-#ifndef SERVICE_INC_SPEEDCAL2_TXT_
-#define SERVICE_INC_SPEEDCAL2_TXT_
+#ifndef SERVICE_INC_SPEEDCAL_H_
+#define SERVICE_INC_SPEEDCAL_H_
 
 
 
@@ -34,4 +34,4 @@ extern Speed motorSpeed;
 
 
 
-#endif /* SERVICE_INC_SPEEDCAL2_TXT_ */
+#endif /* SERVICE_INC_SPEEDCAL_H_ */

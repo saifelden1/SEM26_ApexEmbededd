@@ -15,8 +15,8 @@
 
 
 // Define the PWM range for throttle (0 to 100%)
-#define MAP_MIN                0
-#define MAP_MAX                100
+#define MAP_MIN               0
+#define MAP_MAX              100
 #define Throttle_Rank                0
 
 // Declare the Throttle struct
@@ -33,7 +33,6 @@ extern Throttle_t throttle;
 void Throttle_Init(void);                  // Initialize ADC and DMA for throttle
 uint16_t Throttle_GetRaw(void)   ;              // Start ADC with DMA for throttle
 uint16_t Throttle_Map(void);          // Get the mapped PWM throttle value
-
 
 
 #endif /* HAL_INC_THROTTLE_H_ */

@@ -23,6 +23,7 @@
 typedef struct {
     uint16_t rawValue;         // The raw ADC value for the throttle
     uint8_t mappedValue;       // The mapped PWM value (0 to 100%)
+    uint8_t SoftValue;       // The mapped PWM value (0 to 100%)
     uint8_t channelRank;       // The ADC rank for the throttle in the DMA buffer (1, 2, or 3)
 } Throttle_t;
 

@@ -11,6 +11,7 @@
 
 
 #include "stm32f1xx_hal.h"
+#include "DWTTimer.h"
 #include <stdint.h>
 #include <stdbool.h>
 

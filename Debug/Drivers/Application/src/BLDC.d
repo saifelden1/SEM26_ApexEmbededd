@@ -30,7 +30,8 @@ Drivers/Application/src/BLDC.o: ../Drivers/Application/src/BLDC.c \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/throttle.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/Delay.h \
- C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedDWT.h
+ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedDWT.h \
+ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DWTTimer.h
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Application/inc/BLDC.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -63,3 +64,4 @@ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/throttle.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/Delay.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/SpeedDWT.h:
+C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DWTTimer.h:

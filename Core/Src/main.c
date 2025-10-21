@@ -30,6 +30,7 @@
 #include "NixtonLcd,h"
 #include "Delay.h"
 #include "BLDC.h"
+#include "SoftThrottle.h"
 
 /* USER CODE END Includes */
 
@@ -130,6 +131,7 @@ int main(void)
    CurrentSensor_Init();
    DelayUs_init(&htim2);
    BLDC_Init();
+   SoftThrottle_Init();
 
 //   start_time = HAL_GetTick();
 //   	 HAL_Delay(50);
@@ -147,6 +149,8 @@ int main(void)
 	  BLDC_DecideStep();
 	  BLDC_Comutate();
 	  Speed_Process();
+	  SoftThrottle_Update();
+	  SoftThrottle_GetOutput();
 
     /* USER CODE END WHILE */
 

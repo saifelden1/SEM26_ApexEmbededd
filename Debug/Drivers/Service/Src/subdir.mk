@@ -6,15 +6,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Drivers/Service/Src/Delay.c \
-../Drivers/Service/Src/SpeedDWT.c 
+../Drivers/Service/Src/SoftThrottle.c \
+../Drivers/Service/Src/SpeedDWT.c \
+../Drivers/Service/Src/TimeDif.c 
 
 OBJS += \
 ./Drivers/Service/Src/Delay.o \
-./Drivers/Service/Src/SpeedDWT.o 
+./Drivers/Service/Src/SoftThrottle.o \
+./Drivers/Service/Src/SpeedDWT.o \
+./Drivers/Service/Src/TimeDif.o 
 
 C_DEPS += \
 ./Drivers/Service/Src/Delay.d \
-./Drivers/Service/Src/SpeedDWT.d 
+./Drivers/Service/Src/SoftThrottle.d \
+./Drivers/Service/Src/SpeedDWT.d \
+./Drivers/Service/Src/TimeDif.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +30,7 @@ Drivers/Service/Src/%.o Drivers/Service/Src/%.su Drivers/Service/Src/%.cyclo: ..
 clean: clean-Drivers-2f-Service-2f-Src
 
 clean-Drivers-2f-Service-2f-Src:
-	-$(RM) ./Drivers/Service/Src/Delay.cyclo ./Drivers/Service/Src/Delay.d ./Drivers/Service/Src/Delay.o ./Drivers/Service/Src/Delay.su ./Drivers/Service/Src/SpeedDWT.cyclo ./Drivers/Service/Src/SpeedDWT.d ./Drivers/Service/Src/SpeedDWT.o ./Drivers/Service/Src/SpeedDWT.su
+	-$(RM) ./Drivers/Service/Src/Delay.cyclo ./Drivers/Service/Src/Delay.d ./Drivers/Service/Src/Delay.o ./Drivers/Service/Src/Delay.su ./Drivers/Service/Src/SoftThrottle.cyclo ./Drivers/Service/Src/SoftThrottle.d ./Drivers/Service/Src/SoftThrottle.o ./Drivers/Service/Src/SoftThrottle.su ./Drivers/Service/Src/SpeedDWT.cyclo ./Drivers/Service/Src/SpeedDWT.d ./Drivers/Service/Src/SpeedDWT.o ./Drivers/Service/Src/SpeedDWT.su ./Drivers/Service/Src/TimeDif.cyclo ./Drivers/Service/Src/TimeDif.d ./Drivers/Service/Src/TimeDif.o ./Drivers/Service/Src/TimeDif.su
 
 .PHONY: clean-Drivers-2f-Service-2f-Src
 

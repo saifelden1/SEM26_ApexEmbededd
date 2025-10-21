@@ -8,6 +8,7 @@ C_SRCS += \
 ../Drivers/HAL/Src/ACS758-050B.c \
 ../Drivers/HAL/Src/CAN.c \
 ../Drivers/HAL/Src/DMA_ADC.c \
+../Drivers/HAL/Src/DWTTimer.c \
 ../Drivers/HAL/Src/Hall_Sensor.c \
 ../Drivers/HAL/Src/NixtonLcd.c \
 ../Drivers/HAL/Src/Throttle.c \
@@ -17,6 +18,7 @@ OBJS += \
 ./Drivers/HAL/Src/ACS758-050B.o \
 ./Drivers/HAL/Src/CAN.o \
 ./Drivers/HAL/Src/DMA_ADC.o \
+./Drivers/HAL/Src/DWTTimer.o \
 ./Drivers/HAL/Src/Hall_Sensor.o \
 ./Drivers/HAL/Src/NixtonLcd.o \
 ./Drivers/HAL/Src/Throttle.o \
@@ -26,6 +28,7 @@ C_DEPS += \
 ./Drivers/HAL/Src/ACS758-050B.d \
 ./Drivers/HAL/Src/CAN.d \
 ./Drivers/HAL/Src/DMA_ADC.d \
+./Drivers/HAL/Src/DWTTimer.d \
 ./Drivers/HAL/Src/Hall_Sensor.d \
 ./Drivers/HAL/Src/NixtonLcd.d \
 ./Drivers/HAL/Src/Throttle.d \
@@ -39,7 +42,7 @@ Drivers/HAL/Src/%.o Drivers/HAL/Src/%.su Drivers/HAL/Src/%.cyclo: ../Drivers/HAL
 clean: clean-Drivers-2f-HAL-2f-Src
 
 clean-Drivers-2f-HAL-2f-Src:
-	-$(RM) ./Drivers/HAL/Src/ACS758-050B.cyclo ./Drivers/HAL/Src/ACS758-050B.d ./Drivers/HAL/Src/ACS758-050B.o ./Drivers/HAL/Src/ACS758-050B.su ./Drivers/HAL/Src/CAN.cyclo ./Drivers/HAL/Src/CAN.d ./Drivers/HAL/Src/CAN.o ./Drivers/HAL/Src/CAN.su ./Drivers/HAL/Src/DMA_ADC.cyclo ./Drivers/HAL/Src/DMA_ADC.d ./Drivers/HAL/Src/DMA_ADC.o ./Drivers/HAL/Src/DMA_ADC.su ./Drivers/HAL/Src/Hall_Sensor.cyclo ./Drivers/HAL/Src/Hall_Sensor.d ./Drivers/HAL/Src/Hall_Sensor.o ./Drivers/HAL/Src/Hall_Sensor.su ./Drivers/HAL/Src/NixtonLcd.cyclo ./Drivers/HAL/Src/NixtonLcd.d ./Drivers/HAL/Src/NixtonLcd.o ./Drivers/HAL/Src/NixtonLcd.su ./Drivers/HAL/Src/Throttle.cyclo ./Drivers/HAL/Src/Throttle.d ./Drivers/HAL/Src/Throttle.o ./Drivers/HAL/Src/Throttle.su ./Drivers/HAL/Src/Voltage_sensor.cyclo ./Drivers/HAL/Src/Voltage_sensor.d ./Drivers/HAL/Src/Voltage_sensor.o ./Drivers/HAL/Src/Voltage_sensor.su
+	-$(RM) ./Drivers/HAL/Src/ACS758-050B.cyclo ./Drivers/HAL/Src/ACS758-050B.d ./Drivers/HAL/Src/ACS758-050B.o ./Drivers/HAL/Src/ACS758-050B.su ./Drivers/HAL/Src/CAN.cyclo ./Drivers/HAL/Src/CAN.d ./Drivers/HAL/Src/CAN.o ./Drivers/HAL/Src/CAN.su ./Drivers/HAL/Src/DMA_ADC.cyclo ./Drivers/HAL/Src/DMA_ADC.d ./Drivers/HAL/Src/DMA_ADC.o ./Drivers/HAL/Src/DMA_ADC.su ./Drivers/HAL/Src/DWTTimer.cyclo ./Drivers/HAL/Src/DWTTimer.d ./Drivers/HAL/Src/DWTTimer.o ./Drivers/HAL/Src/DWTTimer.su ./Drivers/HAL/Src/Hall_Sensor.cyclo ./Drivers/HAL/Src/Hall_Sensor.d ./Drivers/HAL/Src/Hall_Sensor.o ./Drivers/HAL/Src/Hall_Sensor.su ./Drivers/HAL/Src/NixtonLcd.cyclo ./Drivers/HAL/Src/NixtonLcd.d ./Drivers/HAL/Src/NixtonLcd.o ./Drivers/HAL/Src/NixtonLcd.su ./Drivers/HAL/Src/Throttle.cyclo ./Drivers/HAL/Src/Throttle.d ./Drivers/HAL/Src/Throttle.o ./Drivers/HAL/Src/Throttle.su ./Drivers/HAL/Src/Voltage_sensor.cyclo ./Drivers/HAL/Src/Voltage_sensor.d ./Drivers/HAL/Src/Voltage_sensor.o ./Drivers/HAL/Src/Voltage_sensor.su
 
 .PHONY: clean-Drivers-2f-HAL-2f-Src
 

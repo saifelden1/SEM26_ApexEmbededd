@@ -1,0 +1,4 @@
+../Drivers/HAL/Src/DWTTimer.c:11:6:DWT_Timer_Init	1
+../Drivers/HAL/Src/DWTTimer.c:23:10:DWT_Timer_GetCycles	1
+../Drivers/HAL/Src/DWTTimer.c:29:7:DWT_Timer_Elapsed_us	1
+../Drivers/HAL/Src/DWTTimer.c:35:7:DWT_Timer_Elapsed_ms	1

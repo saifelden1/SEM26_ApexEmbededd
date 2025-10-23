@@ -1,0 +1,4 @@
+../Drivers/Service/Src/TimeDif.c:14:6:TimDif_Init	1
+../Drivers/Service/Src/TimeDif.c:27:6:TimDif_Capture	1
+../Drivers/Service/Src/TimeDif.c:35:10:TimDif_Get	1
+../Drivers/Service/Src/TimeDif.c:41:11:TimDif_GetState	1

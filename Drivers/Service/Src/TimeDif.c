@@ -5,7 +5,7 @@
  *      Author: 01226
  */
 
-#include "TimDif.h"
+#include "TimeDif.h"
 
 // Static variable to store the time difference state
 static TimDif_t timdif_state = {0, 0};  // Initialize to zero

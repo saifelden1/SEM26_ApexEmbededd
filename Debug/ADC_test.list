@@ -5,47 +5,47 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   0000010c  08000000  08000000  00010000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         0000443c  0800010c  0800010c  0001010c  2**2
+  1 .text         00004488  0800010c  0800010c  0001010c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       0000002c  08004548  08004548  00014548  2**2
+  2 .rodata       0000002c  08004594  08004594  00014594  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08004574  08004574  00020024  2**0
+  3 .ARM.extab    00000000  080045c0  080045c0  00020024  2**0
                   CONTENTS
-  4 .ARM          00000000  08004574  08004574  00020024  2**0
+  4 .ARM          00000000  080045c0  080045c0  00020024  2**0
                   CONTENTS
-  5 .preinit_array 00000000  08004574  08004574  00020024  2**0
+  5 .preinit_array 00000000  080045c0  080045c0  00020024  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08004574  08004574  00014574  2**2
+  6 .init_array   00000004  080045c0  080045c0  000145c0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08004578  08004578  00014578  2**2
+  7 .fini_array   00000004  080045c4  080045c4  000145c4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         00000024  20000000  0800457c  00020000  2**2
+  8 .data         00000024  20000000  080045c8  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000238  20000024  080045a0  00020024  2**2
+  9 .bss          0000023c  20000024  080045ec  00020024  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000025c  080045a0  0002025c  2**0
+ 10 ._user_heap_stack 00000600  20000260  080045ec  00020260  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020024  2**0
                   CONTENTS, READONLY
  12 .comment      00000043  00000000  00000000  0002004d  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000fc33  00000000  00000000  00020090  2**0
+ 13 .debug_info   0000fc71  00000000  00000000  00020090  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00002e34  00000000  00000000  0002fcc3  2**0
+ 14 .debug_abbrev 00002e4a  00000000  00000000  0002fd01  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000fb8  00000000  00000000  00032af8  2**3
+ 15 .debug_aranges 00000fb8  00000000  00000000  00032b50  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00000c1b  00000000  00000000  00033ab0  2**0
+ 16 .debug_rnglists 00000c1c  00000000  00000000  00033b08  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00018dcd  00000000  00000000  000346cb  2**0
+ 17 .debug_macro  00018ddd  00000000  00000000  00034724  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00014ed2  00000000  00000000  0004d498  2**0
+ 18 .debug_line   00014efb  00000000  00000000  0004d501  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0008c610  00000000  00000000  0006236a  2**0
+ 19 .debug_str    0008c63d  00000000  00000000  000623fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00003fcc  00000000  00000000  000ee97c  2**2
+ 20 .debug_frame  00003fd0  00000000  00000000  000eea3c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000005a  00000000  00000000  000f2948  2**0
+ 21 .debug_line_str 0000005a  00000000  00000000  000f2a0c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -64,7 +64,7 @@ Disassembly of section .text:
  8000122:	bd10      	pop	{r4, pc}
  8000124:	20000024 	.word	0x20000024
  8000128:	00000000 	.word	0x00000000
- 800012c:	08004530 	.word	0x08004530
+ 800012c:	0800457c 	.word	0x0800457c
 
 08000130 <frame_dummy>:
  8000130:	b508      	push	{r3, lr}
@@ -76,7 +76,7 @@ Disassembly of section .text:
  800013e:	bd08      	pop	{r3, pc}
  8000140:	00000000 	.word	0x00000000
  8000144:	20000028 	.word	0x20000028
- 8000148:	08004530 	.word	0x08004530
+ 8000148:	0800457c 	.word	0x0800457c
 
 0800014c <__aeabi_frsub>:
  800014c:	f080 4000 	eor.w	r0, r0, #2147483648	; 0x80000000
@@ -695,18 +695,17 @@ int main(void)
 
 	  Throttle_Map();
  8000788:	f000 ffc0 	bl	800170c <Throttle_Map>
-	  VoltageSensor_Read();
- 800078c:	f000 ffea 	bl	8001764 <VoltageSensor_Read>
-	  CurrentSensor_Read();
- 8000790:	f000 fea8 	bl	80014e4 <CurrentSensor_Read>
-	  BLDC_DecideStep();
- 8000794:	f000 fd70 	bl	8001278 <BLDC_DecideStep>
-	  BLDC_Comutate();
- 8000798:	f000 fdaa 	bl	80012f0 <BLDC_Comutate>
-	  //Speed_Process();
 	  SoftThrottle_Update();
- 800079c:	f003 fdf2 	bl	8004384 <SoftThrottle_Update>
-	  test_time3 = SoftThrottle_GetOutput();
+ 800078c:	f003 fdfa 	bl	8004384 <SoftThrottle_Update>
+	  VoltageSensor_Read();
+ 8000790:	f000 ffe8 	bl	8001764 <VoltageSensor_Read>
+	  CurrentSensor_Read();
+ 8000794:	f000 fea6 	bl	80014e4 <CurrentSensor_Read>
+	  BLDC_DecideStep();
+ 8000798:	f000 fd6e 	bl	8001278 <BLDC_DecideStep>
+	  BLDC_Comutate();
+ 800079c:	f000 fda8 	bl	80012f0 <BLDC_Comutate>
+	  test_time3 = SoftThrottle_GetOutput();//for test
  80007a0:	f003 fe44 	bl	800442c <SoftThrottle_GetOutput>
  80007a4:	4603      	mov	r3, r0
  80007a6:	4618      	mov	r0, r3
@@ -735,7 +734,7 @@ void SystemClock_Config(void)
  80007ca:	2228      	movs	r2, #40	; 0x28
  80007cc:	2100      	movs	r1, #0
  80007ce:	4618      	mov	r0, r3
- 80007d0:	f003 fe82 	bl	80044d8 <memset>
+ 80007d0:	f003 fea8 	bl	8004524 <memset>
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  80007d4:	f107 0314 	add.w	r3, r7, #20
  80007d8:	2200      	movs	r2, #0
@@ -1021,7 +1020,7 @@ static void MX_TIM1_Init(void)
  8000956:	2220      	movs	r2, #32
  8000958:	2100      	movs	r1, #0
  800095a:	4618      	mov	r0, r3
- 800095c:	f003 fdbc 	bl	80044d8 <memset>
+ 800095c:	f003 fde2 	bl	8004524 <memset>
 
   /* USER CODE BEGIN TIM1_Init 1 */
 
@@ -2705,7 +2704,7 @@ LoopFillZerobss:
 
 /* Call static constructors */
     bl __libc_init_array
- 800120e:	f003 f96b 	bl	80044e8 <__libc_init_array>
+ 800120e:	f003 f991 	bl	8004534 <__libc_init_array>
 /* Call the application's entry point.*/
   bl main
  8001212:	f7ff fa8f 	bl	8000734 <main>
@@ -2716,11 +2715,11 @@ LoopFillZerobss:
   ldr r1, =_edata
  800121c:	20000024 	.word	0x20000024
   ldr r2, =_sidata
- 8001220:	0800457c 	.word	0x0800457c
+ 8001220:	080045c8 	.word	0x080045c8
   ldr r2, =_sbss
  8001224:	20000024 	.word	0x20000024
   ldr r4, =_ebss
- 8001228:	2000025c 	.word	0x2000025c
+ 8001228:	20000260 	.word	0x20000260
 
 0800122c <CAN1_RX1_IRQHandler>:
  * @retval : None
@@ -2850,7 +2849,7 @@ void BLDC_DecideStep(void) {
  80012de:	bf00      	nop
     }
     Speed_CaptureDiff();
- 80012e0:	f003 f8d2 	bl	8004488 <Speed_CaptureDiff>
+ 80012e0:	f003 f8d4 	bl	800448c <Speed_CaptureDiff>
 }
  80012e4:	bf00      	nop
  80012e6:	bd80      	pop	{r7, pc}
@@ -2863,8 +2862,11 @@ void BLDC_DecideStep(void) {
 void BLDC_Comutate(void) {
  80012f0:	b580      	push	{r7, lr}
  80012f2:	af00      	add	r7, sp, #0
-    // Use the throttle value (mapped PWM duty cycle) for speed control
-//cba
+
+        default:
+            break; // Default case if no valid state is detected
+}*/
+
     switch (step) {
  80012f4:	4b73      	ldr	r3, [pc, #460]	; (80014c4 <BLDC_Comutate+0x1d4>)
  80012f6:	781b      	ldrb	r3, [r3, #0]
@@ -2881,278 +2883,278 @@ void BLDC_Comutate(void) {
  8001318:	08001415 	.word	0x08001415
  800131c:	08001451 	.word	0x08001451
  8001320:	0800148d 	.word	0x0800148d
-        case 1: // Hall = 110 /r
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+            case 1: // Hall = 110 /r
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
  8001324:	4b68      	ldr	r3, [pc, #416]	; (80014c8 <BLDC_Comutate+0x1d8>)
  8001326:	681b      	ldr	r3, [r3, #0]
  8001328:	2200      	movs	r2, #0
- 800132a:	635a      	str	r2, [r3, #52]	; 0x34
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+ 800132a:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
  800132c:	4b66      	ldr	r3, [pc, #408]	; (80014c8 <BLDC_Comutate+0x1d8>)
  800132e:	681b      	ldr	r3, [r3, #0]
  8001330:	2200      	movs	r2, #0
- 8001332:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+ 8001332:	635a      	str	r2, [r3, #52]	; 0x34
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
  8001334:	4b65      	ldr	r3, [pc, #404]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001336:	681b      	ldr	r3, [r3, #0]
  8001338:	2200      	movs	r2, #0
- 800133a:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+ 800133a:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
  800133c:	4b64      	ldr	r3, [pc, #400]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800133e:	681b      	ldr	r3, [r3, #0]
  8001340:	2200      	movs	r2, #0
- 8001342:	639a      	str	r2, [r3, #56]	; 0x38
-            DelayUs(2);  // Small delay for stabilization
+ 8001342:	63da      	str	r2, [r3, #60]	; 0x3c
+                DelayUs(2);  // Small delay for stabilization
  8001344:	2002      	movs	r0, #2
  8001346:	f002 fff1 	bl	800432c <DelayUs>
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
  800134a:	4b62      	ldr	r3, [pc, #392]	; (80014d4 <BLDC_Comutate+0x1e4>)
  800134c:	78da      	ldrb	r2, [r3, #3]
  800134e:	4b5f      	ldr	r3, [pc, #380]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001350:	681b      	ldr	r3, [r3, #0]
- 8001352:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
+ 8001352:	63da      	str	r2, [r3, #60]	; 0x3c
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
  8001354:	4b5f      	ldr	r3, [pc, #380]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001356:	78da      	ldrb	r2, [r3, #3]
  8001358:	4b5d      	ldr	r3, [pc, #372]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800135a:	681b      	ldr	r3, [r3, #0]
- 800135c:	63da      	str	r2, [r3, #60]	; 0x3c
-            break;
+ 800135c:	639a      	str	r2, [r3, #56]	; 0x38
+                break;
  800135e:	e0af      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 2: // Hall = 010 /r
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+            case 2: // Hall = 010 /r
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
  8001360:	4b59      	ldr	r3, [pc, #356]	; (80014c8 <BLDC_Comutate+0x1d8>)
  8001362:	681b      	ldr	r3, [r3, #0]
  8001364:	2200      	movs	r2, #0
- 8001366:	635a      	str	r2, [r3, #52]	; 0x34
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+ 8001366:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
  8001368:	4b58      	ldr	r3, [pc, #352]	; (80014cc <BLDC_Comutate+0x1dc>)
  800136a:	681b      	ldr	r3, [r3, #0]
  800136c:	2200      	movs	r2, #0
- 800136e:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+ 800136e:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
  8001370:	4b57      	ldr	r3, [pc, #348]	; (80014d0 <BLDC_Comutate+0x1e0>)
  8001372:	681b      	ldr	r3, [r3, #0]
  8001374:	2200      	movs	r2, #0
- 8001376:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+ 8001376:	63da      	str	r2, [r3, #60]	; 0x3c
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
  8001378:	4b55      	ldr	r3, [pc, #340]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800137a:	681b      	ldr	r3, [r3, #0]
  800137c:	2200      	movs	r2, #0
- 800137e:	63da      	str	r2, [r3, #60]	; 0x3c
-            DelayUs(2);  // Small delay for stabilization
+ 800137e:	639a      	str	r2, [r3, #56]	; 0x38
+                DelayUs(2);  // Small delay for stabilization
  8001380:	2002      	movs	r0, #2
  8001382:	f002 ffd3 	bl	800432c <DelayUs>
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
  8001386:	4b53      	ldr	r3, [pc, #332]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001388:	78da      	ldrb	r2, [r3, #3]
  800138a:	4b4f      	ldr	r3, [pc, #316]	; (80014c8 <BLDC_Comutate+0x1d8>)
  800138c:	681b      	ldr	r3, [r3, #0]
- 800138e:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
+ 800138e:	635a      	str	r2, [r3, #52]	; 0x34
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
  8001390:	4b50      	ldr	r3, [pc, #320]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001392:	78da      	ldrb	r2, [r3, #3]
  8001394:	4b4d      	ldr	r3, [pc, #308]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001396:	681b      	ldr	r3, [r3, #0]
- 8001398:	639a      	str	r2, [r3, #56]	; 0x38
-            break;
+ 8001398:	63da      	str	r2, [r3, #60]	; 0x3c
+                break;
  800139a:	e091      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 3: // Hall = 011 /r
-        	 __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+            case 3: // Hall = 011 /r
+            	 __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
  800139c:	4b4a      	ldr	r3, [pc, #296]	; (80014c8 <BLDC_Comutate+0x1d8>)
  800139e:	681b      	ldr	r3, [r3, #0]
  80013a0:	2200      	movs	r2, #0
- 80013a2:	635a      	str	r2, [r3, #52]	; 0x34
-        	 __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+ 80013a2:	639a      	str	r2, [r3, #56]	; 0x38
+            	 __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
  80013a4:	4b4a      	ldr	r3, [pc, #296]	; (80014d0 <BLDC_Comutate+0x1e0>)
  80013a6:	681b      	ldr	r3, [r3, #0]
  80013a8:	2200      	movs	r2, #0
- 80013aa:	63da      	str	r2, [r3, #60]	; 0x3c
-        	 __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+ 80013aa:	639a      	str	r2, [r3, #56]	; 0x38
+            	 __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
  80013ac:	4b47      	ldr	r3, [pc, #284]	; (80014cc <BLDC_Comutate+0x1dc>)
  80013ae:	681b      	ldr	r3, [r3, #0]
  80013b0:	2200      	movs	r2, #0
- 80013b2:	639a      	str	r2, [r3, #56]	; 0x38
-        	 __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+ 80013b2:	63da      	str	r2, [r3, #60]	; 0x3c
+            	 __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
  80013b4:	4b45      	ldr	r3, [pc, #276]	; (80014cc <BLDC_Comutate+0x1dc>)
  80013b6:	681b      	ldr	r3, [r3, #0]
  80013b8:	2200      	movs	r2, #0
- 80013ba:	63da      	str	r2, [r3, #60]	; 0x3c
-        	 DelayUs(2);  // Small delay for stabilization
+ 80013ba:	639a      	str	r2, [r3, #56]	; 0x38
+            	 DelayUs(2);  // Small delay for stabilization
  80013bc:	2002      	movs	r0, #2
  80013be:	f002 ffb5 	bl	800432c <DelayUs>
-        	 __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+            	 __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
  80013c2:	4b44      	ldr	r3, [pc, #272]	; (80014d4 <BLDC_Comutate+0x1e4>)
  80013c4:	78da      	ldrb	r2, [r3, #3]
  80013c6:	4b40      	ldr	r3, [pc, #256]	; (80014c8 <BLDC_Comutate+0x1d8>)
  80013c8:	681b      	ldr	r3, [r3, #0]
- 80013ca:	639a      	str	r2, [r3, #56]	; 0x38
-        	 __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
+ 80013ca:	635a      	str	r2, [r3, #52]	; 0x34
+            	 __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
  80013cc:	4b41      	ldr	r3, [pc, #260]	; (80014d4 <BLDC_Comutate+0x1e4>)
  80013ce:	78da      	ldrb	r2, [r3, #3]
  80013d0:	4b3f      	ldr	r3, [pc, #252]	; (80014d0 <BLDC_Comutate+0x1e0>)
  80013d2:	681b      	ldr	r3, [r3, #0]
- 80013d4:	639a      	str	r2, [r3, #56]	; 0x38
-        	   break;
+ 80013d4:	63da      	str	r2, [r3, #60]	; 0x3c
+            	   break;
  80013d6:	e073      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 4: // Hall = 001	/r
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+            case 4: // Hall = 001	/r
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
  80013d8:	4b3d      	ldr	r3, [pc, #244]	; (80014d0 <BLDC_Comutate+0x1e0>)
  80013da:	681b      	ldr	r3, [r3, #0]
  80013dc:	2200      	movs	r2, #0
- 80013de:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+ 80013de:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
  80013e0:	4b39      	ldr	r3, [pc, #228]	; (80014c8 <BLDC_Comutate+0x1d8>)
  80013e2:	681b      	ldr	r3, [r3, #0]
  80013e4:	2200      	movs	r2, #0
- 80013e6:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+ 80013e6:	635a      	str	r2, [r3, #52]	; 0x34
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
  80013e8:	4b37      	ldr	r3, [pc, #220]	; (80014c8 <BLDC_Comutate+0x1d8>)
  80013ea:	681b      	ldr	r3, [r3, #0]
  80013ec:	2200      	movs	r2, #0
- 80013ee:	635a      	str	r2, [r3, #52]	; 0x34
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+ 80013ee:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
  80013f0:	4b36      	ldr	r3, [pc, #216]	; (80014cc <BLDC_Comutate+0x1dc>)
  80013f2:	681b      	ldr	r3, [r3, #0]
  80013f4:	2200      	movs	r2, #0
- 80013f6:	639a      	str	r2, [r3, #56]	; 0x38
-            DelayUs(2);  // Small delay for stabilization
+ 80013f6:	63da      	str	r2, [r3, #60]	; 0x3c
+                DelayUs(2);  // Small delay for stabilization
  80013f8:	2002      	movs	r0, #2
  80013fa:	f002 ff97 	bl	800432c <DelayUs>
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
  80013fe:	4b35      	ldr	r3, [pc, #212]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001400:	78da      	ldrb	r2, [r3, #3]
  8001402:	4b32      	ldr	r3, [pc, #200]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001404:	681b      	ldr	r3, [r3, #0]
- 8001406:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
+ 8001406:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
  8001408:	4b32      	ldr	r3, [pc, #200]	; (80014d4 <BLDC_Comutate+0x1e4>)
  800140a:	78da      	ldrb	r2, [r3, #3]
  800140c:	4b30      	ldr	r3, [pc, #192]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800140e:	681b      	ldr	r3, [r3, #0]
- 8001410:	639a      	str	r2, [r3, #56]	; 0x38
-            break;
+ 8001410:	63da      	str	r2, [r3, #60]	; 0x3c
+                break;
  8001412:	e055      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 5: // Hall = 101 /r
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+            case 5: // Hall = 101 /r
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
  8001414:	4b2d      	ldr	r3, [pc, #180]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001416:	681b      	ldr	r3, [r3, #0]
  8001418:	2200      	movs	r2, #0
- 800141a:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+ 800141a:	63da      	str	r2, [r3, #60]	; 0x3c
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
  800141c:	4b2a      	ldr	r3, [pc, #168]	; (80014c8 <BLDC_Comutate+0x1d8>)
  800141e:	681b      	ldr	r3, [r3, #0]
  8001420:	2200      	movs	r2, #0
- 8001422:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+ 8001422:	635a      	str	r2, [r3, #52]	; 0x34
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
  8001424:	4b2a      	ldr	r3, [pc, #168]	; (80014d0 <BLDC_Comutate+0x1e0>)
  8001426:	681b      	ldr	r3, [r3, #0]
  8001428:	2200      	movs	r2, #0
- 800142a:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WH_TIMER,	WH_CHANNEL, 0);
+ 800142a:	63da      	str	r2, [r3, #60]	; 0x3c
+                __HAL_TIM_SET_COMPARE(WL_TIMER,	WL_CHANNEL, 0);
  800142c:	4b28      	ldr	r3, [pc, #160]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800142e:	681b      	ldr	r3, [r3, #0]
  8001430:	2200      	movs	r2, #0
- 8001432:	63da      	str	r2, [r3, #60]	; 0x3c
-            DelayUs(5);  // Small delay for stabilization
+ 8001432:	639a      	str	r2, [r3, #56]	; 0x38
+                DelayUs(5);  // Small delay for stabilization
  8001434:	2005      	movs	r0, #5
  8001436:	f002 ff79 	bl	800432c <DelayUs>
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
  800143a:	4b26      	ldr	r3, [pc, #152]	; (80014d4 <BLDC_Comutate+0x1e4>)
  800143c:	78da      	ldrb	r2, [r3, #3]
  800143e:	4b23      	ldr	r3, [pc, #140]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001440:	681b      	ldr	r3, [r3, #0]
- 8001442:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
+ 8001442:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
  8001444:	4b23      	ldr	r3, [pc, #140]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001446:	78da      	ldrb	r2, [r3, #3]
  8001448:	4b1f      	ldr	r3, [pc, #124]	; (80014c8 <BLDC_Comutate+0x1d8>)
  800144a:	681b      	ldr	r3, [r3, #0]
- 800144c:	635a      	str	r2, [r3, #52]	; 0x34
-            break;
+ 800144c:	639a      	str	r2, [r3, #56]	; 0x38
+                break;
  800144e:	e037      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 6: // Hall = 100 /r
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+            case 6: // Hall = 100 /r
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
  8001450:	4b1e      	ldr	r3, [pc, #120]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001452:	681b      	ldr	r3, [r3, #0]
  8001454:	2200      	movs	r2, #0
- 8001456:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(UH_TIMER,	UH_CHANNEL, 0);
+ 8001456:	63da      	str	r2, [r3, #60]	; 0x3c
+                __HAL_TIM_SET_COMPARE(UL_TIMER,	UL_CHANNEL, 0);
  8001458:	4b1c      	ldr	r3, [pc, #112]	; (80014cc <BLDC_Comutate+0x1dc>)
  800145a:	681b      	ldr	r3, [r3, #0]
  800145c:	2200      	movs	r2, #0
- 800145e:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+ 800145e:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
  8001460:	4b19      	ldr	r3, [pc, #100]	; (80014c8 <BLDC_Comutate+0x1d8>)
  8001462:	681b      	ldr	r3, [r3, #0]
  8001464:	2200      	movs	r2, #0
- 8001466:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+ 8001466:	635a      	str	r2, [r3, #52]	; 0x34
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
  8001468:	4b19      	ldr	r3, [pc, #100]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800146a:	681b      	ldr	r3, [r3, #0]
  800146c:	2200      	movs	r2, #0
- 800146e:	639a      	str	r2, [r3, #56]	; 0x38
-            DelayUs(2);  // Small delay for stabilization
+ 800146e:	63da      	str	r2, [r3, #60]	; 0x3c
+                DelayUs(2);  // Small delay for stabilization
  8001470:	2002      	movs	r0, #2
  8001472:	f002 ff5b 	bl	800432c <DelayUs>
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
  8001476:	4b17      	ldr	r3, [pc, #92]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001478:	78da      	ldrb	r2, [r3, #3]
  800147a:	4b15      	ldr	r3, [pc, #84]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800147c:	681b      	ldr	r3, [r3, #0]
- 800147e:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
+ 800147e:	639a      	str	r2, [r3, #56]	; 0x38
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
  8001480:	4b14      	ldr	r3, [pc, #80]	; (80014d4 <BLDC_Comutate+0x1e4>)
  8001482:	78da      	ldrb	r2, [r3, #3]
  8001484:	4b10      	ldr	r3, [pc, #64]	; (80014c8 <BLDC_Comutate+0x1d8>)
  8001486:	681b      	ldr	r3, [r3, #0]
- 8001488:	635a      	str	r2, [r3, #52]	; 0x34
-            break;
+ 8001488:	639a      	str	r2, [r3, #56]	; 0x38
+                break;
  800148a:	e019      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        case 7: // Hall = 110 or 111 (Idle or Full-On State)
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+            case 7: // Hall = 110 or 111 (Idle or Full-On State)
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
  800148c:	4b0f      	ldr	r3, [pc, #60]	; (80014cc <BLDC_Comutate+0x1dc>)
  800148e:	681b      	ldr	r3, [r3, #0]
  8001490:	2200      	movs	r2, #0
  8001492:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
  8001494:	4b0d      	ldr	r3, [pc, #52]	; (80014cc <BLDC_Comutate+0x1dc>)
  8001496:	681b      	ldr	r3, [r3, #0]
  8001498:	2200      	movs	r2, #0
  800149a:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(WH_TIMER,	WH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER,	WH_CHANNEL, 0);
  800149c:	4b0c      	ldr	r3, [pc, #48]	; (80014d0 <BLDC_Comutate+0x1e0>)
  800149e:	681b      	ldr	r3, [r3, #0]
  80014a0:	2200      	movs	r2, #0
  80014a2:	63da      	str	r2, [r3, #60]	; 0x3c
-            __HAL_TIM_SET_COMPARE(WL_TIMER,	WL_CHANNEL , 0);
+                __HAL_TIM_SET_COMPARE(WL_TIMER,	WL_CHANNEL , 0);
  80014a4:	4b0a      	ldr	r3, [pc, #40]	; (80014d0 <BLDC_Comutate+0x1e0>)
  80014a6:	681b      	ldr	r3, [r3, #0]
  80014a8:	2200      	movs	r2, #0
  80014aa:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
  80014ac:	4b06      	ldr	r3, [pc, #24]	; (80014c8 <BLDC_Comutate+0x1d8>)
  80014ae:	681b      	ldr	r3, [r3, #0]
  80014b0:	2200      	movs	r2, #0
  80014b2:	639a      	str	r2, [r3, #56]	; 0x38
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
  80014b4:	4b04      	ldr	r3, [pc, #16]	; (80014c8 <BLDC_Comutate+0x1d8>)
  80014b6:	681b      	ldr	r3, [r3, #0]
  80014b8:	2200      	movs	r2, #0
  80014ba:	635a      	str	r2, [r3, #52]	; 0x34
-            break;
+                break;
  80014bc:	e000      	b.n	80014c0 <BLDC_Comutate+0x1d0>
 
-        default:
-            break; // Default case if no valid state is detected
+            default:
+                break; // Default case if no valid state is detected
  80014be:	bf00      	nop
-    }
+}
 }
  80014c0:	bf00      	nop
  80014c2:	bd80      	pop	{r7, pc}
@@ -8409,7 +8411,7 @@ if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_PCLK1) == RCC_CLOCKTYPE_PCLK
  8003196:	bf00      	nop
  8003198:	40022000 	.word	0x40022000
  800319c:	40021000 	.word	0x40021000
- 80031a0:	08004548 	.word	0x08004548
+ 80031a0:	08004594 	.word	0x08004594
  80031a4:	20000000 	.word	0x20000000
  80031a8:	2000001c 	.word	0x2000001c
 
@@ -8544,8 +8546,8 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  800323e:	bf00      	nop
  8003240:	40021000 	.word	0x40021000
  8003244:	007a1200 	.word	0x007a1200
- 8003248:	08004560 	.word	0x08004560
- 800324c:	08004570 	.word	0x08004570
+ 8003248:	080045ac 	.word	0x080045ac
+ 800324c:	080045bc 	.word	0x080045bc
  8003250:	003d0900 	.word	0x003d0900
 
 08003254 <HAL_RCC_GetHCLKFreq>:
@@ -8591,7 +8593,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8003284:	4618      	mov	r0, r3
  8003286:	bd80      	pop	{r7, pc}
  8003288:	40021000 	.word	0x40021000
- 800328c:	08004558 	.word	0x08004558
+ 800328c:	080045a4 	.word	0x080045a4
 
 08003290 <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -8617,7 +8619,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  80032ac:	4618      	mov	r0, r3
  80032ae:	bd80      	pop	{r7, pc}
  80032b0:	40021000 	.word	0x40021000
- 80032b4:	08004558 	.word	0x08004558
+ 80032b4:	080045a4 	.word	0x080045a4
 
 080032b8 <RCC_Delay>:
   * @brief  This function provides delay (in milliseconds) based on CPU cycles method.
@@ -11822,9 +11824,9 @@ float SoftThrottle_GetOutput(void)
  8004440:	20000234 	.word	0x20000234
 
 08004444 <Speed_Init>:
+static float rpm_filtered = 0.0f;
 static uint32_t last_update_tick = 0;
 static bool stopped = true;
-
 // ===== Initialization =====
 void Speed_Init(void)
 {
@@ -11834,138 +11836,183 @@ void Speed_Init(void)
     DWT_Timer_Init();
  8004448:	f7fd f898 	bl	800157c <DWT_Timer_Init>
 
-    last_time = 0;
- 800444c:	4b09      	ldr	r3, [pc, #36]	; (8004474 <Speed_Init+0x30>)
- 800444e:	2200      	movs	r2, #0
- 8004450:	601a      	str	r2, [r3, #0]
+    time = DWT_Timer_GetCycles();
+ 800444c:	f7fd f8b0 	bl	80015b0 <DWT_Timer_GetCycles>
+ 8004450:	4603      	mov	r3, r0
+ 8004452:	4a09      	ldr	r2, [pc, #36]	; (8004478 <Speed_Init+0x34>)
+ 8004454:	6013      	str	r3, [r2, #0]
     last_diff = 0;
- 8004452:	4b09      	ldr	r3, [pc, #36]	; (8004478 <Speed_Init+0x34>)
- 8004454:	2200      	movs	r2, #0
- 8004456:	601a      	str	r2, [r3, #0]
+ 8004456:	4b09      	ldr	r3, [pc, #36]	; (800447c <Speed_Init+0x38>)
+ 8004458:	2200      	movs	r2, #0
+ 800445a:	601a      	str	r2, [r3, #0]
     rpm_filtered = 0.0f;
- 8004458:	4b08      	ldr	r3, [pc, #32]	; (800447c <Speed_Init+0x38>)
- 800445a:	f04f 0200 	mov.w	r2, #0
- 800445e:	601a      	str	r2, [r3, #0]
+ 800445c:	4b08      	ldr	r3, [pc, #32]	; (8004480 <Speed_Init+0x3c>)
+ 800445e:	f04f 0200 	mov.w	r2, #0
+ 8004462:	601a      	str	r2, [r3, #0]
     stopped = true;
- 8004460:	4b07      	ldr	r3, [pc, #28]	; (8004480 <Speed_Init+0x3c>)
- 8004462:	2201      	movs	r2, #1
- 8004464:	701a      	strb	r2, [r3, #0]
+ 8004464:	4b07      	ldr	r3, [pc, #28]	; (8004484 <Speed_Init+0x40>)
+ 8004466:	2201      	movs	r2, #1
+ 8004468:	701a      	strb	r2, [r3, #0]
     last_update_tick = HAL_GetTick();
- 8004466:	f7fd fa01 	bl	800186c <HAL_GetTick>
- 800446a:	4603      	mov	r3, r0
- 800446c:	4a05      	ldr	r2, [pc, #20]	; (8004484 <Speed_Init+0x40>)
- 800446e:	6013      	str	r3, [r2, #0]
+ 800446a:	f7fd f9ff 	bl	800186c <HAL_GetTick>
+ 800446e:	4603      	mov	r3, r0
+ 8004470:	4a05      	ldr	r2, [pc, #20]	; (8004488 <Speed_Init+0x44>)
+ 8004472:	6013      	str	r3, [r2, #0]
 }
- 8004470:	bf00      	nop
- 8004472:	bd80      	pop	{r7, pc}
- 8004474:	2000024c 	.word	0x2000024c
+ 8004474:	bf00      	nop
+ 8004476:	bd80      	pop	{r7, pc}
  8004478:	20000250 	.word	0x20000250
  800447c:	20000254 	.word	0x20000254
- 8004480:	20000021 	.word	0x20000021
- 8004484:	20000258 	.word	0x20000258
+ 8004480:	20000258 	.word	0x20000258
+ 8004484:	20000021 	.word	0x20000021
+ 8004488:	2000025c 	.word	0x2000025c
 
-08004488 <Speed_CaptureDiff>:
+0800448c <Speed_CaptureDiff>:
 
 // ===== FAST PATH =====
 // Called on every Hall transition (interrupt or commutation step)
+// Called on every Hall transition (interrupt or commutation step)
 void Speed_CaptureDiff(void)
 {
- 8004488:	b580      	push	{r7, lr}
- 800448a:	b082      	sub	sp, #8
- 800448c:	af00      	add	r7, sp, #0
-    uint32_t now = DWT_Timer_GetCycles();
- 800448e:	f7fd f88f 	bl	80015b0 <DWT_Timer_GetCycles>
- 8004492:	6078      	str	r0, [r7, #4]
+ 800448c:	b590      	push	{r4, r7, lr}
+ 800448e:	b083      	sub	sp, #12
+ 8004490:	af00      	add	r7, sp, #0
 
-    if (last_time != 0)
- 8004494:	4b0c      	ldr	r3, [pc, #48]	; (80044c8 <Speed_CaptureDiff+0x40>)
- 8004496:	681b      	ldr	r3, [r3, #0]
- 8004498:	2b00      	cmp	r3, #0
- 800449a:	d005      	beq.n	80044a8 <Speed_CaptureDiff+0x20>
-        last_diff = now - last_time; // handle overflow automatically
- 800449c:	4b0a      	ldr	r3, [pc, #40]	; (80044c8 <Speed_CaptureDiff+0x40>)
- 800449e:	681b      	ldr	r3, [r3, #0]
- 80044a0:	687a      	ldr	r2, [r7, #4]
- 80044a2:	1ad3      	subs	r3, r2, r3
- 80044a4:	4a09      	ldr	r2, [pc, #36]	; (80044cc <Speed_CaptureDiff+0x44>)
- 80044a6:	6013      	str	r3, [r2, #0]
+    if (transition_count == 0) {
+ 8004492:	4b1f      	ldr	r3, [pc, #124]	; (8004510 <Speed_CaptureDiff+0x84>)
+ 8004494:	681b      	ldr	r3, [r3, #0]
+ 8004496:	2b00      	cmp	r3, #0
+ 8004498:	d104      	bne.n	80044a4 <Speed_CaptureDiff+0x18>
+        // Record the timestamp for the first Hall transition
+    	time = DWT_Timer_GetCycles();
+ 800449a:	f7fd f889 	bl	80015b0 <DWT_Timer_GetCycles>
+ 800449e:	4603      	mov	r3, r0
+ 80044a0:	4a1c      	ldr	r2, [pc, #112]	; (8004514 <Speed_CaptureDiff+0x88>)
+ 80044a2:	6013      	str	r3, [r2, #0]
+    }
 
-    last_time = now;
- 80044a8:	4a07      	ldr	r2, [pc, #28]	; (80044c8 <Speed_CaptureDiff+0x40>)
- 80044aa:	687b      	ldr	r3, [r7, #4]
+    transition_count++;  // Increment the transition counter
+ 80044a4:	4b1a      	ldr	r3, [pc, #104]	; (8004510 <Speed_CaptureDiff+0x84>)
+ 80044a6:	681b      	ldr	r3, [r3, #0]
+ 80044a8:	3301      	adds	r3, #1
+ 80044aa:	4a19      	ldr	r2, [pc, #100]	; (8004510 <Speed_CaptureDiff+0x84>)
  80044ac:	6013      	str	r3, [r2, #0]
-    last_update_tick = HAL_GetTick();
- 80044ae:	f7fd f9dd 	bl	800186c <HAL_GetTick>
- 80044b2:	4603      	mov	r3, r0
- 80044b4:	4a06      	ldr	r2, [pc, #24]	; (80044d0 <Speed_CaptureDiff+0x48>)
- 80044b6:	6013      	str	r3, [r2, #0]
-    stopped = false;
- 80044b8:	4b06      	ldr	r3, [pc, #24]	; (80044d4 <Speed_CaptureDiff+0x4c>)
- 80044ba:	2200      	movs	r2, #0
- 80044bc:	701a      	strb	r2, [r3, #0]
+
+    if (transition_count == 10) {
+ 80044ae:	4b18      	ldr	r3, [pc, #96]	; (8004510 <Speed_CaptureDiff+0x84>)
+ 80044b0:	681b      	ldr	r3, [r3, #0]
+ 80044b2:	2b0a      	cmp	r3, #10
+ 80044b4:	d128      	bne.n	8004508 <Speed_CaptureDiff+0x7c>
+        // Calculate the time difference between the first and the 10th transition
+        uint32_t time_diff = DWT_Timer_Elapsed_ms(time);  // Time in cycles
+ 80044b6:	4b17      	ldr	r3, [pc, #92]	; (8004514 <Speed_CaptureDiff+0x88>)
+ 80044b8:	681b      	ldr	r3, [r3, #0]
+ 80044ba:	4618      	mov	r0, r3
+ 80044bc:	f7fd f882 	bl	80015c4 <DWT_Timer_Elapsed_ms>
+ 80044c0:	4603      	mov	r3, r0
+ 80044c2:	4618      	mov	r0, r3
+ 80044c4:	f7fc f916 	bl	80006f4 <__aeabi_f2uiz>
+ 80044c8:	4603      	mov	r3, r0
+ 80044ca:	607b      	str	r3, [r7, #4]
+
+        // Now you can calculate the RPM or handle time as needed
+        float rpm_inst = (60.0f * (float)SystemCoreClock) / ((float)HALL_TRANSITIONS * (float)time_diff);
+ 80044cc:	4b12      	ldr	r3, [pc, #72]	; (8004518 <Speed_CaptureDiff+0x8c>)
+ 80044ce:	681b      	ldr	r3, [r3, #0]
+ 80044d0:	4618      	mov	r0, r3
+ 80044d2:	f7fb fef1 	bl	80002b8 <__aeabi_ui2f>
+ 80044d6:	4603      	mov	r3, r0
+ 80044d8:	4910      	ldr	r1, [pc, #64]	; (800451c <Speed_CaptureDiff+0x90>)
+ 80044da:	4618      	mov	r0, r3
+ 80044dc:	f7fb ff44 	bl	8000368 <__aeabi_fmul>
+ 80044e0:	4603      	mov	r3, r0
+ 80044e2:	461c      	mov	r4, r3
+ 80044e4:	6878      	ldr	r0, [r7, #4]
+ 80044e6:	f7fb fee7 	bl	80002b8 <__aeabi_ui2f>
+ 80044ea:	4603      	mov	r3, r0
+ 80044ec:	490c      	ldr	r1, [pc, #48]	; (8004520 <Speed_CaptureDiff+0x94>)
+ 80044ee:	4618      	mov	r0, r3
+ 80044f0:	f7fb ff3a 	bl	8000368 <__aeabi_fmul>
+ 80044f4:	4603      	mov	r3, r0
+ 80044f6:	4619      	mov	r1, r3
+ 80044f8:	4620      	mov	r0, r4
+ 80044fa:	f7fb ffe9 	bl	80004d0 <__aeabi_fdiv>
+ 80044fe:	4603      	mov	r3, r0
+ 8004500:	603b      	str	r3, [r7, #0]
+
+        // You could filter or handle the RPM here if needed
+
+        // Reset the counter for the next batch of transitions
+        transition_count = 0;
+ 8004502:	4b03      	ldr	r3, [pc, #12]	; (8004510 <Speed_CaptureDiff+0x84>)
+ 8004504:	2200      	movs	r2, #0
+ 8004506:	601a      	str	r2, [r3, #0]
+    }
+
+
 }
- 80044be:	bf00      	nop
- 80044c0:	3708      	adds	r7, #8
- 80044c2:	46bd      	mov	sp, r7
- 80044c4:	bd80      	pop	{r7, pc}
- 80044c6:	bf00      	nop
- 80044c8:	2000024c 	.word	0x2000024c
- 80044cc:	20000250 	.word	0x20000250
- 80044d0:	20000258 	.word	0x20000258
- 80044d4:	20000021 	.word	0x20000021
+ 8004508:	bf00      	nop
+ 800450a:	370c      	adds	r7, #12
+ 800450c:	46bd      	mov	sp, r7
+ 800450e:	bd90      	pop	{r4, r7, pc}
+ 8004510:	2000024c 	.word	0x2000024c
+ 8004514:	20000250 	.word	0x20000250
+ 8004518:	20000000 	.word	0x20000000
+ 800451c:	42700000 	.word	0x42700000
+ 8004520:	431c0000 	.word	0x431c0000
 
-080044d8 <memset>:
- 80044d8:	4603      	mov	r3, r0
- 80044da:	4402      	add	r2, r0
- 80044dc:	4293      	cmp	r3, r2
- 80044de:	d100      	bne.n	80044e2 <memset+0xa>
- 80044e0:	4770      	bx	lr
- 80044e2:	f803 1b01 	strb.w	r1, [r3], #1
- 80044e6:	e7f9      	b.n	80044dc <memset+0x4>
+08004524 <memset>:
+ 8004524:	4603      	mov	r3, r0
+ 8004526:	4402      	add	r2, r0
+ 8004528:	4293      	cmp	r3, r2
+ 800452a:	d100      	bne.n	800452e <memset+0xa>
+ 800452c:	4770      	bx	lr
+ 800452e:	f803 1b01 	strb.w	r1, [r3], #1
+ 8004532:	e7f9      	b.n	8004528 <memset+0x4>
 
-080044e8 <__libc_init_array>:
- 80044e8:	b570      	push	{r4, r5, r6, lr}
- 80044ea:	2600      	movs	r6, #0
- 80044ec:	4d0c      	ldr	r5, [pc, #48]	; (8004520 <__libc_init_array+0x38>)
- 80044ee:	4c0d      	ldr	r4, [pc, #52]	; (8004524 <__libc_init_array+0x3c>)
- 80044f0:	1b64      	subs	r4, r4, r5
- 80044f2:	10a4      	asrs	r4, r4, #2
- 80044f4:	42a6      	cmp	r6, r4
- 80044f6:	d109      	bne.n	800450c <__libc_init_array+0x24>
- 80044f8:	f000 f81a 	bl	8004530 <_init>
- 80044fc:	2600      	movs	r6, #0
- 80044fe:	4d0a      	ldr	r5, [pc, #40]	; (8004528 <__libc_init_array+0x40>)
- 8004500:	4c0a      	ldr	r4, [pc, #40]	; (800452c <__libc_init_array+0x44>)
- 8004502:	1b64      	subs	r4, r4, r5
- 8004504:	10a4      	asrs	r4, r4, #2
- 8004506:	42a6      	cmp	r6, r4
- 8004508:	d105      	bne.n	8004516 <__libc_init_array+0x2e>
- 800450a:	bd70      	pop	{r4, r5, r6, pc}
- 800450c:	f855 3b04 	ldr.w	r3, [r5], #4
- 8004510:	4798      	blx	r3
- 8004512:	3601      	adds	r6, #1
- 8004514:	e7ee      	b.n	80044f4 <__libc_init_array+0xc>
- 8004516:	f855 3b04 	ldr.w	r3, [r5], #4
- 800451a:	4798      	blx	r3
- 800451c:	3601      	adds	r6, #1
- 800451e:	e7f2      	b.n	8004506 <__libc_init_array+0x1e>
- 8004520:	08004574 	.word	0x08004574
- 8004524:	08004574 	.word	0x08004574
- 8004528:	08004574 	.word	0x08004574
- 800452c:	08004578 	.word	0x08004578
+08004534 <__libc_init_array>:
+ 8004534:	b570      	push	{r4, r5, r6, lr}
+ 8004536:	2600      	movs	r6, #0
+ 8004538:	4d0c      	ldr	r5, [pc, #48]	; (800456c <__libc_init_array+0x38>)
+ 800453a:	4c0d      	ldr	r4, [pc, #52]	; (8004570 <__libc_init_array+0x3c>)
+ 800453c:	1b64      	subs	r4, r4, r5
+ 800453e:	10a4      	asrs	r4, r4, #2
+ 8004540:	42a6      	cmp	r6, r4
+ 8004542:	d109      	bne.n	8004558 <__libc_init_array+0x24>
+ 8004544:	f000 f81a 	bl	800457c <_init>
+ 8004548:	2600      	movs	r6, #0
+ 800454a:	4d0a      	ldr	r5, [pc, #40]	; (8004574 <__libc_init_array+0x40>)
+ 800454c:	4c0a      	ldr	r4, [pc, #40]	; (8004578 <__libc_init_array+0x44>)
+ 800454e:	1b64      	subs	r4, r4, r5
+ 8004550:	10a4      	asrs	r4, r4, #2
+ 8004552:	42a6      	cmp	r6, r4
+ 8004554:	d105      	bne.n	8004562 <__libc_init_array+0x2e>
+ 8004556:	bd70      	pop	{r4, r5, r6, pc}
+ 8004558:	f855 3b04 	ldr.w	r3, [r5], #4
+ 800455c:	4798      	blx	r3
+ 800455e:	3601      	adds	r6, #1
+ 8004560:	e7ee      	b.n	8004540 <__libc_init_array+0xc>
+ 8004562:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8004566:	4798      	blx	r3
+ 8004568:	3601      	adds	r6, #1
+ 800456a:	e7f2      	b.n	8004552 <__libc_init_array+0x1e>
+ 800456c:	080045c0 	.word	0x080045c0
+ 8004570:	080045c0 	.word	0x080045c0
+ 8004574:	080045c0 	.word	0x080045c0
+ 8004578:	080045c4 	.word	0x080045c4
 
-08004530 <_init>:
- 8004530:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8004532:	bf00      	nop
- 8004534:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8004536:	bc08      	pop	{r3}
- 8004538:	469e      	mov	lr, r3
- 800453a:	4770      	bx	lr
+0800457c <_init>:
+ 800457c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800457e:	bf00      	nop
+ 8004580:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8004582:	bc08      	pop	{r3}
+ 8004584:	469e      	mov	lr, r3
+ 8004586:	4770      	bx	lr
 
-0800453c <_fini>:
- 800453c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 800453e:	bf00      	nop
- 8004540:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8004542:	bc08      	pop	{r3}
- 8004544:	469e      	mov	lr, r3
- 8004546:	4770      	bx	lr
+08004588 <_fini>:
+ 8004588:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 800458a:	bf00      	nop
+ 800458c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 800458e:	bc08      	pop	{r3}
+ 8004590:	469e      	mov	lr, r3
+ 8004592:	4770      	bx	lr

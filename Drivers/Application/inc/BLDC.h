@@ -45,6 +45,8 @@ extern TIM_HandleTypeDef htim3;  // Timer for phase W
 #define PWM_MIN           0
 #define PWM_MAX           100
 
+#define FORWARD
+
 // External variables (defined in main or other parts of the program)
 extern uint8_t HallSensor_Combined;  // Combined Hall sensor state (3 bits)
 extern uint16_t duty;                // PWM duty cycle (for throttle control)

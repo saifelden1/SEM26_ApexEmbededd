@@ -1,6 +1,6 @@
 ../Drivers/Service/Src/SpeedDWT.c:28:6:Speed_Init	1
-../Drivers/Service/Src/SpeedDWT.c:42:6:Speed_CaptureDiff	2
-../Drivers/Service/Src/SpeedDWT.c:56:6:Speed_Process	3
-../Drivers/Service/Src/SpeedDWT.c:76:7:Speed_GetRPM	1
-../Drivers/Service/Src/SpeedDWT.c:81:7:Speed_GetRPS	1
-../Drivers/Service/Src/SpeedDWT.c:86:6:Speed_IsStopped	1
+../Drivers/Service/Src/SpeedDWT.c:43:6:Speed_CaptureDiff	3
+../Drivers/Service/Src/SpeedDWT.c:70:6:Speed_Process	3
+../Drivers/Service/Src/SpeedDWT.c:90:7:Speed_GetRPM	1
+../Drivers/Service/Src/SpeedDWT.c:95:7:Speed_GetRPS	1
+../Drivers/Service/Src/SpeedDWT.c:100:6:Speed_IsStopped	1

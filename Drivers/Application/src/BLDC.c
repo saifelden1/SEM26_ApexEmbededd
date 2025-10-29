@@ -59,8 +59,9 @@ void BLDC_DecideStep(void) {
 void BLDC_Comutate(void) {
     // Use the throttle value (mapped PWM duty cycle) for speed control
 //cba
-    switch (step) {
-        case 1: // Hall = 110 /r
+/*
+switch (step) {
+        case 1: // Hall = 110 /forward for left motor
             __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
@@ -131,5 +132,79 @@ void BLDC_Comutate(void) {
 
         default:
             break; // Default case if no valid state is detected
-    }
+}*/
+
+    switch (step) {
+            case 1: // Hall = 110 /r
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+                DelayUs(2);  // Small delay for stabilization
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
+                break;
+
+            case 2: // Hall = 010 /r
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+                DelayUs(2);  // Small delay for stabilization
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+                break;
+
+            case 3: // Hall = 011 /r
+            	 __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+            	 __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+            	 __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+            	 __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+            	 DelayUs(2);  // Small delay for stabilization
+            	 __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
+            	 __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
+            	   break;
+
+            case 4: // Hall = 001	/r
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+                DelayUs(2);  // Small delay for stabilization
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
+                break;
+
+            case 5: // Hall = 101 /r
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WL_TIMER,	WL_CHANNEL, 0);
+                DelayUs(5);  // Small delay for stabilization
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+                break;
+
+            case 6: // Hall = 100 /r
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UL_TIMER,	UL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
+                DelayUs(2);  // Small delay for stabilization
+                __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+                break;
+
+            case 7: // Hall = 110 or 111 (Idle or Full-On State)
+                __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WH_TIMER,	WH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(WL_TIMER,	WL_CHANNEL , 0);
+                __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
+                __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
+                break;
+
+            default:
+                break; // Default case if no valid state is detected
+}
 }

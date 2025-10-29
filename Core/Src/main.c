@@ -154,17 +154,13 @@ int main(void)
   {
 
 	  Throttle_Map();
+	  SoftThrottle_Update();
 	  VoltageSensor_Read();
 	  CurrentSensor_Read();
 	  BLDC_DecideStep();
 	  BLDC_Comutate();
-	  //Speed_Process();
-	  SoftThrottle_Update();
-	  test_time3 = SoftThrottle_GetOutput();
-	  //test_time=DWT_Timer_GetCycles();
-	  //HAL_Delay(10);
-	  //test_time2=DWT_Timer_Elapsed_ms(test_time);
-
+	  test_time3 = SoftThrottle_GetOutput();//for test
+//	  PowerMonitor_Update();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

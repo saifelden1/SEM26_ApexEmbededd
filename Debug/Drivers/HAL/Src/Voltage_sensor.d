@@ -26,6 +26,7 @@ Drivers/HAL/Src/Voltage_sensor.o: ../Drivers/HAL/Src/Voltage_sensor.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Voltage_sensor.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -54,4 +55,5 @@ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Voltage_sensor.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h:

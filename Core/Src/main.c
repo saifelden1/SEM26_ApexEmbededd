@@ -27,10 +27,11 @@
 #include "Hall_Sensor.h"
 #include "Throttle.h"
 #include "Voltage_sensor.h"
-#include "NixtonLcd,h"
 #include "Delay.h"
 #include "BLDC.h"
 #include "SoftThrottle.h"
+#include "DWTTimer.h"
+#include "PowerCal.h"
 
 /* USER CODE END Includes */
 
@@ -44,7 +45,9 @@
 //uint16_t hallb=0;
 //uint16_t hallc=0;
 //uint16_t duty =0;
-    uint32_t start_time, elapsed_time;
+    uint32_t test_time;
+    uint32_t test_time2;
+    uint32_t test_time3;
 
 /* USER CODE END PTD */
 
@@ -66,6 +69,8 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
+UART_HandleTypeDef huart3;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -79,6 +84,7 @@ static void MX_TIM4_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -101,7 +107,8 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -122,9 +129,10 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HallSensor_Init();
+   HallSensor_Init();
    Throttle_Init();
    DMA_ADC_Init(&hadc1);
    VoltageSensor_Init();
@@ -132,6 +140,8 @@ int main(void)
    DelayUs_init(&htim2);
    BLDC_Init();
    SoftThrottle_Init();
+   DWT_Timer_Init();
+   PowerMonitor_Init;
 
 //   start_time = HAL_GetTick();
 //   	 HAL_Delay(50);
@@ -148,9 +158,12 @@ int main(void)
 	  CurrentSensor_Read();
 	  BLDC_DecideStep();
 	  BLDC_Comutate();
-	  Speed_Process();
+	  //Speed_Process();
 	  SoftThrottle_Update();
-	  SoftThrottle_GetOutput();
+	  test_time3 = SoftThrottle_GetOutput();
+	  //test_time=DWT_Timer_GetCycles();
+	  //HAL_Delay(10);
+	  //test_time2=DWT_Timer_Elapsed_ms(test_time);
 
     /* USER CODE END WHILE */
 
@@ -487,6 +500,39 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 2 */
   HAL_TIM_MspPostInit(&htim4);
+
+}
+
+/**
+  * @brief USART3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART3_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART3_Init 0 */
+
+  /* USER CODE END USART3_Init 0 */
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 9600;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
 
 }
 

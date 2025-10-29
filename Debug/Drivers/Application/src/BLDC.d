@@ -26,6 +26,7 @@ Drivers/Application/src/BLDC.o: ../Drivers/Application/src/BLDC.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/throttle.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h \
@@ -59,6 +60,7 @@ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Application/inc/BLDC.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/throttle.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h:

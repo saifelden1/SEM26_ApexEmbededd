@@ -1,4 +1,4 @@
-../Drivers/Service/Src/SoftThrottle.c:26:6:SoftThrottle_Init	8	static
-../Drivers/Service/Src/SoftThrottle.c:34:6:SoftThrottle_Reset	4	static
-../Drivers/Service/Src/SoftThrottle.c:41:6:SoftThrottle_Update	16	static
-../Drivers/Service/Src/SoftThrottle.c:80:7:SoftThrottle_GetOutput	8	static
+../Drivers/Service/Src/SoftThrottle.c:25:6:SoftThrottle_Init	8	static
+../Drivers/Service/Src/SoftThrottle.c:33:6:SoftThrottle_Reset	4	static
+../Drivers/Service/Src/SoftThrottle.c:40:6:SoftThrottle_Update	16	static
+../Drivers/Service/Src/SoftThrottle.c:76:7:SoftThrottle_GetOutput	8	static

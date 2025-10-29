@@ -25,6 +25,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/ACS758-050B.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/CAN.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h \
@@ -32,7 +33,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Throttle.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Voltage_sensor.h \
- C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/NixtonLcd,h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/Delay.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Application/inc/BLDC.h \
  C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h \
@@ -67,6 +67,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/ACS758-050B.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/CAN.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h:
@@ -74,7 +75,6 @@ C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Hall_Sensor.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Throttle.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/DMA_ADC.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/Voltage_sensor.h:
-C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/NixtonLcd,h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Service/inc/Delay.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/Application/inc/BLDC.h:
 C:/Users/01226/Desktop/apex25codes/ADC_test/Drivers/HAL/inc/hall_sensor.h:

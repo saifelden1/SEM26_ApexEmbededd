@@ -18,19 +18,19 @@
 #include "SpeedDWT.h"
 
 // ===== Internal state =====
-static uint32_t last_time = 0;         // Previous DWT timestamp
-static volatile uint32_t last_diff = 0; // Cycle difference between two Hall edges
+static uint32_t transition_count = 0;   // Counter for Hall transitions
+static uint32_t time = 0;          // Timestamp of the first Hall transition
+static volatile uint32_t last_diff = 0;  // Cycle difference between two Hall edges
 static float rpm_filtered = 0.0f;
 static uint32_t last_update_tick = 0;
 static bool stopped = true;
-
 // ===== Initialization =====
 void Speed_Init(void)
 {
     // Initialize DWT timing system
     DWT_Timer_Init();
 
-    last_time = 0;
+    time = DWT_Timer_GetCycles();
     last_diff = 0;
     rpm_filtered = 0.0f;
     stopped = true;
@@ -39,18 +39,32 @@ void Speed_Init(void)
 
 // ===== FAST PATH =====
 // Called on every Hall transition (interrupt or commutation step)
+// Called on every Hall transition (interrupt or commutation step)
 void Speed_CaptureDiff(void)
 {
-    uint32_t now = DWT_Timer_GetCycles();
 
-    if (last_time != 0)
-        last_diff = now - last_time; // handle overflow automatically
+    if (transition_count == 0) {
+        // Record the timestamp for the first Hall transition
+    	time = DWT_Timer_GetCycles();
+    }
 
-    last_time = now;
-    last_update_tick = HAL_GetTick();
-    stopped = false;
+    transition_count++;  // Increment the transition counter
+
+    if (transition_count == 10) {
+        // Calculate the time difference between the first and the 10th transition
+        uint32_t time_diff = DWT_Timer_Elapsed_ms(time);  // Time in cycles
+
+        // Now you can calculate the RPM or handle time as needed
+        float rpm_inst = (60.0f * (float)SystemCoreClock) / ((float)HALL_TRANSITIONS * (float)time_diff);
+
+        // You could filter or handle the RPM here if needed
+
+        // Reset the counter for the next batch of transitions
+        transition_count = 0;
+    }
+
+
 }
-
 // ===== SLOW PATH =====
 // Called periodically (e.g. every 10–20 ms)
 void Speed_Process(void)

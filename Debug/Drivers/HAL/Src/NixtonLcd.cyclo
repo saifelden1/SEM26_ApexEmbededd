@@ -1,0 +1,6 @@
+../Drivers/HAL/Src/NixtonLcd.c:15:6:Nextion_Init	1
+../Drivers/HAL/Src/NixtonLcd.c:23:6:Nextion_SendCommand	1
+../Drivers/HAL/Src/NixtonLcd.c:34:6:Nextion_SendText	1
+../Drivers/HAL/Src/NixtonLcd.c:45:6:Nextion_SendNumber	1
+../Drivers/HAL/Src/NixtonLcd.c:56:6:Nextion_ShowImage	1
+../Drivers/HAL/Src/NixtonLcd.c:66:6:Nextion_HideImage	1

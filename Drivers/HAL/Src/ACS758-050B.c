@@ -10,7 +10,7 @@
 
 // Global variable to store the current reading
 float CurrentSensor_bC = 0.0f;  // Initialize current reading to 0
-
+float Vout ;
 // Initialize the current sensor (ADC setup)
 void CurrentSensor_Init(void) {
     // Initialization is handled by CubeMX or other configuration code.
@@ -23,10 +23,10 @@ float CurrentSensor_Read(void) {
     uint16_t adcValue = DMA_ADC_Buffer[ACS758_sensor_Rank];  // Assuming the current sensor is in the first channel (index 0)
 
     // Convert ADC value to output voltage (range 0 to 3.3V)
-    float Vout = ((float)adcValue / ADC_RESOLUTION) * ADC_MAX_VOLTAGE;
+     Vout = ((float)adcValue / ADC_RESOLUTION) * ADC_MAX_VOLTAGE;
 
     // Scale back to the original sensor voltage (before the voltage divider)
-    float Vsensor = Vout / VOLTAGE_DIVIDER_SCALING;
+    float Vsensor = Vout;
 
     // Calculate the current using the formula:
     // I_current = (V_sensor - 2.5V) / 0.04V

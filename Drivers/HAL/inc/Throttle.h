@@ -16,7 +16,7 @@
 
 // Define the PWM range for throttle (0 to 100%)
 #define MAP_MIN               0
-#define MAP_MAX              100
+#define MAP_MAX              60
 #define Throttle_Rank                0
 
 // Declare the Throttle struct

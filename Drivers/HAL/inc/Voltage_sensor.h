@@ -18,7 +18,7 @@
 #define ADC_MAX_VOLTAGE_V 2.815f // Maximum ADC voltage (2.815V)
 
 // Define the rank of the voltage sensor in the DMA buffer
-#define Voltage_sensor_Rank 1  // Change this to the correct rank (e.g., 0, 1, or 2)
+#define Voltage_sensor_Rank 2  // Change this to the correct rank (e.g., 0, 1, or 2)
 
 // Declare the global variable to hold the battery voltage
 extern float VoltageSensor_bV;  // The actual battery voltage

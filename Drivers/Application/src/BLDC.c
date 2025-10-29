@@ -66,8 +66,8 @@ void BLDC_Comutate(void) {
             __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
             DelayUs(2);  // Small delay for stabilization
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.mappedValue);
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.mappedValue);
+            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
+            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
             break;
 
         case 2: // Hall = 010 /r
@@ -76,8 +76,8 @@ void BLDC_Comutate(void) {
             __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, 0);
             DelayUs(2);  // Small delay for stabilization
-            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.mappedValue);
-            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.mappedValue);
+            __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+            __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, throttle.SoftValue);
             break;
 
         case 3: // Hall = 011 /r
@@ -86,8 +86,8 @@ void BLDC_Comutate(void) {
         	 __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
         	 __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, 0);
         	 DelayUs(2);  // Small delay for stabilization
-        	 __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.mappedValue);
-        	 __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.mappedValue);
+        	 __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, throttle.SoftValue);
+        	 __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
         	   break;
 
         case 4: // Hall = 001	/r
@@ -96,8 +96,8 @@ void BLDC_Comutate(void) {
             __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(UL_TIMER, UL_CHANNEL, 0);
             DelayUs(2);  // Small delay for stabilization
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.mappedValue);
-            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.mappedValue);
+            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+            __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, throttle.SoftValue);
             break;
 
         case 5: // Hall = 101 /r
@@ -106,8 +106,8 @@ void BLDC_Comutate(void) {
             __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(WH_TIMER,	WH_CHANNEL, 0);
             DelayUs(5);  // Small delay for stabilization
-            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.mappedValue);
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.mappedValue);
+            __HAL_TIM_SET_COMPARE(UH_TIMER, UH_CHANNEL, throttle.SoftValue);
+            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
             break;
 
         case 6: // Hall = 100 /r
@@ -116,8 +116,8 @@ void BLDC_Comutate(void) {
             __HAL_TIM_SET_COMPARE(VH_TIMER, VH_CHANNEL, 0);
             __HAL_TIM_SET_COMPARE(WL_TIMER, WL_CHANNEL, 0);
             DelayUs(2);  // Small delay for stabilization
-            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.mappedValue);
-            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.mappedValue);
+            __HAL_TIM_SET_COMPARE(WH_TIMER, WH_CHANNEL, throttle.SoftValue);
+            __HAL_TIM_SET_COMPARE(VL_TIMER, VL_CHANNEL, throttle.SoftValue);
             break;
 
         case 7: // Hall = 110 or 111 (Idle or Full-On State)

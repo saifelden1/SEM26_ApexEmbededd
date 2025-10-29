@@ -1,0 +1,6 @@
+../Drivers/HAL/Src/NixtonLcd.c:15:6:Nextion_Init	16	static
+../Drivers/HAL/Src/NixtonLcd.c:23:6:Nextion_SendCommand	24	static
+../Drivers/HAL/Src/NixtonLcd.c:34:6:Nextion_SendText	104	static
+../Drivers/HAL/Src/NixtonLcd.c:45:6:Nextion_SendNumber	72	static
+../Drivers/HAL/Src/NixtonLcd.c:56:6:Nextion_ShowImage	48	static
+../Drivers/HAL/Src/NixtonLcd.c:66:6:Nextion_HideImage	48	static

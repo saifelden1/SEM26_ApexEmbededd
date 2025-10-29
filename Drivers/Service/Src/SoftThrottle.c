@@ -19,7 +19,6 @@
 #include "SoftThrottle.h"
 
 // ===== Internal state =====
-
 static uint32_t last_update_cyc = 0;  // last DWT timestamp
 
 // ===== Initialization =====
@@ -33,42 +32,39 @@ void SoftThrottle_Init(void)
 // ===== Reset instantly =====
 void SoftThrottle_Reset(void)
 {
-	throttle.SoftValue = 0.0f;
+    throttle.SoftValue = 0.0f;
 }
 
 // ===== Main update =====
 // Should be called every few milliseconds (e.g., 5–10 ms)
 void SoftThrottle_Update(void)
 {
-    // Get target from Throttle module (mapped value 0–100%)
-	Throttle_Map();
+    // Get the target from the Throttle module (mapped value 0–100%)
+    Throttle_Map();
 
     // Calculate elapsed time in ms since last update
-    float dt_ms = DWT_Timer_Elapsed_ms(last_update_cyc);
-    if (dt_ms < 10.0f) return;   // skip if too soon
+    uint32_t dt_ms = DWT_Timer_Elapsed_ms(last_update_cyc);
 
-   // last_update_cyc = DWT_Timer_GetCycles();
+    // If the time difference is less than 10 ms, skip this update
+    if (dt_ms < SOFTTHROTTLE_RAMP_TIME_MS) return;
 
-    // Compute allowed rate of change (% per ms)
-    //float rate = MAP_MAX / (float)SOFTTHROTTLE_RAMP_TIME_MS;  // % per ms
-    //float delta = rate * dt_ms;
+    // Update last_update_cyc to the current cycle count for the next update comparison
+    last_update_cyc = DWT_Timer_GetCycles();
 
-    // Ensure a minimum ramp step
-    //if (delta < SOFTTHROTTLE_MIN_STEP) delta = SOFTTHROTTLE_MIN_STEP;
-
-    // Smoothly move current_output toward target_output
+    // Smoothly adjust SoftValue based on the mapped value
     if (throttle.mappedValue > throttle.SoftValue)
     {
-    	throttle.SoftValue += SOFTTHROTTLE_STEP_UP;
+        throttle.SoftValue += SOFTTHROTTLE_STEP_UP;  // Increase SoftValue
         if (throttle.SoftValue > throttle.mappedValue)
-        	throttle.SoftValue = throttle.mappedValue;
+            throttle.SoftValue = throttle.mappedValue;
     }
     else if (throttle.mappedValue < throttle.SoftValue)
     {
-    	throttle.SoftValue = throttle.mappedValue;
-//    	throttle.SoftValue -= delta;
+//        throttle.SoftValue -= SOFTTHROTTLE_STEP_UP;  // Decrease SoftValue
 //        if (throttle.SoftValue < throttle.mappedValue)
-//        	throttle.SoftValue = throttle.mappedValue;
+//            throttle.SoftValue = throttle.mappedValue;
+    		throttle.SoftValue = throttle.mappedValue;//no ramp down its instant
+
     }
 
     // Clamp to valid range [0,100]

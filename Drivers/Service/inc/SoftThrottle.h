@@ -25,7 +25,7 @@
 
 
 // ===== Configuration =====
-#define SOFTTHROTTLE_RAMP_TIME_MS   1000U   // time to go 0 → 100% throttle
+#define SOFTTHROTTLE_RAMP_TIME_MS   50U   // time to go 0 → 100% throttle
 #define SOFTTHROTTLE_MIN_STEP       1f   // minimum PWM change per update (%)
 #define SOFTTHROTTLE_STEP_UP     2   // throttle increases by 2 every 5 ms
 #define SOFTTHROTTLE_STEP_DOWN   3   // throttle decreases by 3 every 5 ms (faster release)
